@@ -77,7 +77,7 @@ void setup(void) {
   // may end up with a black screen some times, or all the time.
   tft.setSPISpeed(4000000);
   tft.fillScreen(ST77XX_BLACK);
-  int rand = random(6);
+  int rand = random(7);
   ImageReturnCode stat;
   if(rand==0){
     stat = reader.drawBMP("/miner.bmp", tft, 0, 0);
@@ -100,6 +100,10 @@ void setup(void) {
   }
     else if(rand==5){
     stat = reader.drawBMP("/bendy.bmp", tft, 0, 0);
+    reader.printStatus(stat);
+  }
+    else if(rand==6){
+    stat = reader.drawBMP("/dino.bmp", tft, 0, 0);
     reader.printStatus(stat);
   }
   
